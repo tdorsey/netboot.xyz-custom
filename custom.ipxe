@@ -1,9 +1,8 @@
 
+#!ipxe
+
 # RancherOS
 # http://rancher.com/rancher-os/
-
-:start
-goto rancheros_menu
 
 :rancheros_menu
 set url releases.rancher.com
@@ -27,5 +26,3 @@ boot
 :rancheros_exit
 clear menu
 exit 0
-
-
