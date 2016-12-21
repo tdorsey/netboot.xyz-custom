@@ -1,21 +1,3 @@
-
-#!ipxe
-
-# RancherOS
-# http://rancher.com/rancher-os/
-
-:rancheros_menu
-set url releases.rancher.com
-menu RancherOS
-item latest RancherOS Latest (20 MB)
-choose version || goto rancheros_exit
-goto ${version}
-
-:latest
-echo ${cls}
-set folder os/latest
-goto boot
-
 :boot
 echo Login in with username: rancher, password: rancher
 echo To install: ros install -d /dev/sdz1
@@ -23,6 +5,3 @@ kernel http://${url}/${folder}/vmlinuz rancher.state.autoformat=[/dev/sdz] ranch
 initrd http://${url}/${folder}/initrd
 boot
 
-:rancheros_exit
-clear menu
-exit 0
